@@ -1,6 +1,11 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 import path from "path";
+import { fileURLToPath } from "url";
 import tsconfigPaths from "vite-tsconfig-paths";
+
+// ESM-safe __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -16,9 +21,8 @@ const config: StorybookConfig = {
   },
   viteFinal: async (config) => {
     config.plugins?.push(
-      /** @see https://github.com/aleclarson/vite-tsconfig-paths */
       tsconfigPaths({
-        projects: [path.resolve(path.dirname(__dirname), "tsconfig.json")],
+        projects: [path.resolve(__dirname, "tsconfig.json")],
       })
     );
 
