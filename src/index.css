@@ -4,3 +4,7 @@
   --color-btn: #e2852e;
   --color-btn-txt: #4f200d;
 }
+
+.btn-pulse:hover {
+  transform: scale(1.01);
+}

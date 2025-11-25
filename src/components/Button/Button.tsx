@@ -12,13 +12,14 @@ export interface ButtonProps
 }
 
 const buttonStyle = cva(
-  "inline-flex items-center justify-center gap-2 rounded-xs font-medium cursor-pointer disabled:cursor-not-allowed transition-all duration-300",
+  "inline-flex items-center justify-center gap-2 rounded-xs font-medium cursor-pointer btn-pulse transition-all duration-200",
   {
     variants: {
       variant: {
         solid: "bg-btn text-btn-txt hover:bg-btn/90",
-        outline: "border border-btn text-btn hover:bg-btn/5",
-        subtle: "bg-btn/10 text-btn hover:bg-btn/20",
+        outline:
+          "border border-btn/50 text-btn hover:bg-btn/5 hover:border-btn",
+        subtle: "bg-btn/10 text-btn hover:bg-btn/20 ",
         ghost: "text-btn hover:bg-btn/10",
       },
       size: {
