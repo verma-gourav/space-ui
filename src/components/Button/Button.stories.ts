@@ -10,11 +10,11 @@ const meta: Meta<typeof Button> = {
   tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: { type: "select" },
+      control: { type: "inline-radio" },
       options: ["solid", "outline", "subtle", "ghost"],
     },
     size: {
-      control: { type: "select" },
+      control: { type: "inline-radio" },
       options: ["sm", "md", "lg"],
     },
     startIcon: { control: false },
