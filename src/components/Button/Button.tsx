@@ -12,11 +12,11 @@ export interface ButtonProps
 }
 
 const buttonStyle = cva(
-  "inline-flex items-center justify-center gap-2 rounded-sm font-medium cursor-pointer transition-all duration-300",
+  "inline-flex items-center justify-center gap-2 font-medium cursor-pointer transition-all duration-200",
   {
     variants: {
       variant: {
-        solid: "bg-btn text-btn-txt hover:bg-btn/90",
+        solid: "bg-btn text-white hover:bg-btn/80",
         outline:
           "border border-btn/50 text-btn hover:bg-btn/5 hover:border-btn",
         subtle: "bg-btn/10 text-btn hover:bg-btn/20 ",
