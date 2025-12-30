@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { IoMdLogOut } from "react-icons/io";
+import { MdDoubleArrow } from "react-icons/md";
 import Button from "./Button";
 
 const meta: Meta<typeof Button> = {
@@ -16,8 +18,8 @@ const meta: Meta<typeof Button> = {
       control: { type: "inline-radio" },
       options: ["sm", "md", "lg"],
     },
-    startIcon: { control: false },
-    endIcon: { control: false },
+    startIcon: { control: "boolean" },
+    endIcon: { control: "boolean" },
   },
 };
 
@@ -31,4 +33,12 @@ export const Default: Story = {
     variant: "solid",
     size: "md",
   },
+
+  render: ({ startIcon, endIcon, ...props }) => (
+    <Button
+      {...props}
+      startIcon={startIcon ? <MdDoubleArrow /> : null}
+      endIcon={endIcon ? <IoMdLogOut /> : null}
+    />
+  ),
 };

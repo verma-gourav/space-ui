@@ -7,7 +7,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonStyle> {
   startIcon?: ReactNode;
-  children: ReactNode;
+  children?: ReactNode;
   endIcon?: ReactNode;
 }
 

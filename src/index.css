@@ -3,5 +3,10 @@
 @theme {
   --color-btn: #029cfd;
 
-  --color-input: #6a7282;
+  /* Input */
+  --color-labelColor: #02b1fd;
+  --color-borderColor: #02b1fd;
+  --color-iconColor: #abc4ff;
+  --color-focusColor: #029cfd;
+  --color-helperTextColor: #50bbe9;
 }

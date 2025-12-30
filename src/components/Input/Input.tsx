@@ -26,13 +26,14 @@ const Input: React.FC<InputProps> = ({
   return (
     <div className="flex flex-col w-full gap-1">
       {label && (
-        <label htmlFor={inputId} className="font-medium text-gray-400">
+        <label htmlFor={inputId} className="font-medium text-labelColor">
           {label}
         </label>
       )}
+
       <div className="relative w-full">
         {startIcon && (
-          <span className="absolute left-2 text-input top-1/2 -translate-y-1/2 pointer-events-none">
+          <span className="absolute left-2 top-1/2 text-iconColor -translate-y-1/2 pointer-events-none">
             {startIcon}
           </span>
         )}
@@ -40,26 +41,30 @@ const Input: React.FC<InputProps> = ({
           id={inputId}
           className={cn(
             "w-full border px-2 py-2 transition-all focus:outline-none focus:ring-1 disabled:opacity-50 disabled:cursor-not-allowed",
+
             startIcon ? "pl-10" : "",
             endIcon ? "pr-10" : "",
+
             error
               ? "border-red-500 focus:ring-red-500"
-              : "border-input focus:ring-btn ",
+              : "border-borderColor focus:ring-focusColor",
+
             className
           )}
           {...props}
         />
         {endIcon && (
-          <span className="absolute text-input right-2 top-1/2 -translate-y-1/2 pointer-events-none">
+          <span className="absolute text-iconColor right-2 top-1/2 -translate-y-1/2 pointer-events-none">
             {endIcon}
           </span>
         )}
       </div>
+
       {helperText && (
         <span
           className={cn(
             "text-sm mt-1",
-            error ? "text-red-500" : "text-gray-500"
+            error ? "text-red-500" : `text-helperTextColor`
           )}
         >
           {helperText}
